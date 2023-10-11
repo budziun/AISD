@@ -41,3 +41,4 @@ namespace ISI1_grupa1
         }
     }
 }
+dom: funkcja przyjmuje dwa paramettry int a wewnatrz algorytm dodawania pod kreska i odejmowania zas pewnie
