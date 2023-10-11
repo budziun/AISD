@@ -13,7 +13,7 @@ namespace ISI1_grupa1
         private void btnStart_Click(object sender, EventArgs e)
         {
             int liczbaN = (int)nudLiczbaN.Value;
-            int wynik = Fib2(liczbaN);
+            long wynik = Fib2(liczbaN);
             
             MessageBox.Show(wynik.ToString());
         }
@@ -24,15 +24,16 @@ namespace ISI1_grupa1
             if(n==0) return 0;
             return Fib(n - 1) + Fib(n - 2);
         }
-        int Fib2(int n)
+        long Fib2(int n)
         {
             if (n == 0 || n==1) return n;
-            int[] wyrazy=new int[n];
+            long[] wyrazy=new long[n+1];
+            wyrazy[1] = 1;
             for (int i = 2; i < wyrazy.Length; i++)
             {
                 wyrazy[i] = wyrazy[i - 1] + wyrazy[i - 2];
             }
-            return wyrazy[n - 1] + wyrazy[n-2];
+            return wyrazy[n];
         }
         private void nudLiczbaN_ValueChanged(object sender, EventArgs e)
         {
