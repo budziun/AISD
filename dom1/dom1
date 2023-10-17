@@ -21,7 +21,7 @@ namespace WinFormsApp2
         {
             int a = 108;
             int b = 4;
-            MessageBox.Show((a + b).ToString());
+            MessageBox.Show(AddingUnderKreska(a, b).ToString());
         }
         int Fib(int n)
         {
