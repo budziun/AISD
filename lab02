@@ -10,14 +10,6 @@ namespace ISI1_grupa1
         {
             InitializeComponent();
         }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            int[] tab = { 7, 2, 5, 4, 1 };
-            BubbleSort(tab);
-            MessageBox.Show(ArrayToString(tab));
-        }
-
         int Fib(int n)
         {
             if (n == 1) return 1;
@@ -34,33 +26,6 @@ namespace ISI1_grupa1
                 wyrazy[i] = wyrazy[i - 1] + wyrazy[i - 2];
             }
             return wyrazy[n];
-        }
-        static void BubbleSort(int[] tab)
-        {
-            int n = tab.Length;
-            for (int i = 0; i < n - 1; i++)
-            {
-                for (int j = 0; j < n - i - 1; j++)
-                {
-                    if (tab[j] > tab[j + 1])
-                    {
-                        int temp = tab[j];
-                        tab[j] = tab[j + 1];
-                        tab[j + 1] = temp;
-                    }
-                }
-            }
-            
-        }
-        
-        static string ArrayToString(int[] tab)
-        {
-            string wynik = " ";
-            for(int i = 0; i < tab.Length; i++)
-            {
-                wynik += tab[i]+ " ";
-            }
-            return wynik;
         }
         private void nudLiczbaN_ValueChanged(object sender, EventArgs e)
         {
