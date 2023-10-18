@@ -66,5 +66,19 @@ namespace ISI1_grupa1
         {
 
         }
+
+        private void btnFib1_Click(object sender, EventArgs e)
+        {
+            int liczbaN = (int)nudLiczbaN.Value;
+            long wynik = Fib(liczbaN);
+            MessageBox.Show(wynik.ToString());
+        }
+
+        private void btnFib2_Click(object sender, EventArgs e)
+        {
+            int liczbaN = (int)nudLiczbaN.Value;
+            long wynik = Fib2(liczbaN);
+            MessageBox.Show(wynik.ToString());
+        }
     }
 }
