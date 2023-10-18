@@ -16,6 +16,7 @@ namespace ISI1_grupa1
             int[] tab = { 7, 2, 5, 4, 1 };
             BubbleSort(tab);
             MessageBox.Show(ArrayToString(tab));
+            Lbl_Bombel = ArrayToString(tab);
         }
 
         int Fib(int n)
@@ -49,8 +50,7 @@ namespace ISI1_grupa1
                         tab[j + 1] = temp;
                     }
                 }
-            }
-            
+            }   
         }
         
         static string ArrayToString(int[] tab)
@@ -79,6 +79,11 @@ namespace ISI1_grupa1
             int liczbaN = (int)nudLiczbaN.Value;
             long wynik = Fib2(liczbaN);
             MessageBox.Show(wynik.ToString());
+        }
+
+        private void Lbl_Bombel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
