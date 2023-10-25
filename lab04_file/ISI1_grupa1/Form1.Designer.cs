@@ -36,6 +36,7 @@
             this.lblWynik = new System.Windows.Forms.Label();
             this.tbInput = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudLiczbaN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +93,10 @@
             // lblWynik
             // 
             this.lblWynik.AutoSize = true;
-            this.lblWynik.Location = new System.Drawing.Point(354, 120);
+            this.lblWynik.Location = new System.Drawing.Point(363, 149);
             this.lblWynik.Name = "lblWynik";
-            this.lblWynik.Size = new System.Drawing.Size(40, 15);
+            this.lblWynik.Size = new System.Drawing.Size(0, 15);
             this.lblWynik.TabIndex = 5;
-            this.lblWynik.Text = "Wynik";
             // 
             // tbInput
             // 
@@ -109,17 +109,28 @@
             // 
             this.btnSelect.Location = new System.Drawing.Point(408, 75);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.Size = new System.Drawing.Size(75, 27);
             this.btnSelect.TabIndex = 7;
             this.btnSelect.Text = "SELECT";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(341, 123);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 8;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 246);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.lblWynik);
@@ -150,5 +161,6 @@
         private Label lblWynik;
         private TextBox tbInput;
         private Button btnSelect;
+        private Button btnInsert;
     }
 }

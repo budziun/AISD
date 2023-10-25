@@ -66,13 +66,28 @@ namespace ISI1_grupa1
                     {
                         min = tab[j];
                         ind = j;
-
                     }
-
                 }
                 temp = tab[i];
                 tab[i] = min;
                 tab[ind] = temp;
+            }
+            return tab;
+        }
+        int[] Insertsort(int[] tab)
+        {
+            int temp = 0;
+            for (int i = 0; i < tab.Length - 1; i++)
+            {
+                for (int j = i+1; j > 0; j--)
+                {
+                    if (tab[j] < tab[j-1])
+                    {
+                        temp = tab[j-1];
+                        tab[j] = tab[j-1];
+                        tab[j] = temp;
+                    }
+                }
             }
             return tab;
         }
@@ -128,6 +143,13 @@ namespace ISI1_grupa1
         {
             int[] tab = Corvert(tbInput.Text);
             Selectsort(tab);
+            lblWynik.Text = ArrayToString(tab);
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            int[] tab = Corvert(tbInput.Text);
+            Insertsort(tab);
             lblWynik.Text = ArrayToString(tab);
         }
     }
