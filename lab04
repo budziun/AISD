@@ -15,7 +15,6 @@ namespace ISI1_grupa1
         {
             int[] tab = Corvert(tbInput.Text);
             BubbleSort(tab);
-            MessageBox.Show(ArrayToString(tab));
             lblWynik.Text = ArrayToString(tab);
         }
 
@@ -118,6 +117,18 @@ namespace ISI1_grupa1
         private void Lbl_Bombel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            int[] tab = Corvert(tbInput.Text);
+            Selectsort(tab);
+            lblWynik.Text = ArrayToString(tab);
         }
     }
 }
