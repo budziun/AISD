@@ -1,0 +1,17 @@
+D:\169224\ISI1_grupa1\bin\Debug\net6.0-windows\ISI1_grupa1.exe
+D:\169224\ISI1_grupa1\bin\Debug\net6.0-windows\ISI1_grupa1.deps.json
+D:\169224\ISI1_grupa1\bin\Debug\net6.0-windows\ISI1_grupa1.runtimeconfig.json
+D:\169224\ISI1_grupa1\bin\Debug\net6.0-windows\ISI1_grupa1.dll
+D:\169224\ISI1_grupa1\bin\Debug\net6.0-windows\ISI1_grupa1.pdb
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.csproj.AssemblyReference.cache
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.Form1.resources
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.csproj.GenerateResource.cache
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.GeneratedMSBuildEditorConfig.editorconfig
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.AssemblyInfoInputs.cache
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.AssemblyInfo.cs
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.csproj.CoreCompileInputs.cache
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.dll
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\refint\ISI1_grupa1.dll
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.pdb
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ISI1_grupa1.genruntimeconfig.cache
+D:\169224\ISI1_grupa1\obj\Debug\net6.0-windows\ref\ISI1_grupa1.dll
