@@ -22,7 +22,7 @@ namespace AiSD_ISI_gr1_5
             w2.dzieci.Add(w6);
         }
     }
-    class Węzeł
+    public class Węzeł
     {
         public int wartość;
         public List<Węzeł> dzieci = new List<Węzeł>();
