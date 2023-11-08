@@ -74,23 +74,25 @@ namespace ISI1_grupa1
             }
             return tab;
         }
-        int[] Insertsort(int[] tab)
+        public int[] Insertsort(int[] tab)
+{
+            var arrayLength = tab.Length;
+    for (int i = 0; i < arrayLength - 1; i++)
+    {
+        var smallestVal = i;
+        for (int j = i + 1; j < arrayLength; j++)
         {
-            int temp = 0;
-            for (int i = 0; i < tab.Length - 1; i++)
+            if (tab[j] < tab[smallestVal])
             {
-                for (int j = i+1; j > 0; j--)
-                {
-                    if (tab[j] < tab[j-1])
-                    {
-                        temp = tab[j-1];
-                        tab[j] = tab[j-1];
-                        tab[j] = temp;
-                    }
-                }
+                smallestVal = j;
             }
-            return tab;
         }
+        var tempVar = tab[smallestVal];
+        tab[smallestVal] = tab[i];
+        tab[i] = tempVar;
+    }
+    return tab;
+}
         int[] Corvert(string napis)
         {
             var liczbyS = napis.Trim().Split(' ');
