@@ -20,6 +20,11 @@ namespace AiSD_ISI_gr1_5
             w1.dzieci.Add(w4);
             w2.dzieci.Add(w5);
             w2.dzieci.Add(w6);
+            A(w1);
+        }
+        void A(Węzeł w)
+        {
+            MessageBox.Show(w.wartość.ToString());
         }
     }
     public class Węzeł
