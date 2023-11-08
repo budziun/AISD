@@ -25,6 +25,10 @@ namespace AiSD_ISI_gr1_5
         void A(Węzeł w)
         {
             MessageBox.Show(w.wartość.ToString());
+            for(int i = 0; i < w.dzieci.Count; i++)
+            {
+                A(w.dzieci[i]);
+            }
         }
     }
     public class Węzeł
