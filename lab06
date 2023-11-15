@@ -22,25 +22,19 @@ namespace AiSD_ISI_gr1_5
             w2.dzieci.Add(w6);
             //A(w1);
 
-            var p1 = new Węzeł2(5);
+            var p1 = new Węzeł2(1);
             var p2 = new Węzeł2(2);
-            var p3 = new Węzeł2(6);
-            var p4 = new Węzeł2(1);
-            var p5 = new Węzeł2(3);
-            var p6 = new Węzeł2(7);
-            var p7 = new Węzeł2(8);
-            var p8 = new Węzeł2(4);
+            var p3 = new Węzeł2(3);
+            var p4 = new Węzeł2(4);
+            var p5 = new Węzeł2(5);
+            var p6 = new Węzeł2(6);
+            
             p1.Add(p2);
             p1.Add(p3);
-            p3.Add(p2);
-            p3.Add(p4);
-            p3.Add(p7);
-            p4.Add(p5);
+            p2.Add(p4);
+            p2.Add(p5);
+            p3.Add(p6);
             p4.Add(p6);
-            p4.Add(p8);
-            p7.Add(p5);
-            p7.Add(p6);
-            p7.Add(p8);
             B(p1);
         }
         void A(Węzeł w)
@@ -53,11 +47,7 @@ namespace AiSD_ISI_gr1_5
         }
         void B(Węzeł2 ww)
         {
-            MessageBox.Show(ww.warto.ToString());
-            for(int j = 0;j< ww.sąsiad.Count; j++)
-            {
-                B(ww.sąsiad[j]);
-            }
+            int [] visited
         }
     }
 
