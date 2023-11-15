@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
 namespace AiSD_ISI_gr1_5
 {
     public partial class Form1 : Form
@@ -20,7 +24,6 @@ namespace AiSD_ISI_gr1_5
             w1.dzieci.Add(w4);
             w2.dzieci.Add(w5);
             w2.dzieci.Add(w6);
-            //A(w1);
 
             var p1 = new Węzeł2(1);
             var p2 = new Węzeł2(2);
@@ -28,26 +31,50 @@ namespace AiSD_ISI_gr1_5
             var p4 = new Węzeł2(4);
             var p5 = new Węzeł2(5);
             var p6 = new Węzeł2(6);
-            
+
             p1.Add(p2);
             p1.Add(p3);
             p2.Add(p4);
             p2.Add(p5);
             p3.Add(p6);
             p4.Add(p6);
-            B(p1);
+
+            DetectCycles(p1);
         }
-        void A(Węzeł w)
+
+        void DetectCycles(Węzeł2 root)
         {
-            MessageBox.Show(w.wartość.ToString());
-            for (int i = 0; i < w.dzieci.Count; i++)
+            HashSet<Węzeł2> visited = new HashSet<Węzeł2>();
+            foreach (var node in root.sąsiad)
             {
-                A(w.dzieci[i]);
+                if (!visited.Contains(node))
+                {
+                    if (HasCycle(node, visited, root))
+                    {
+                        MessageBox.Show("Graf zawiera cykl!");
+                        return;
+                    }
+                }
             }
+            MessageBox.Show("Graf nie zawiera cyklu.");
         }
-        void B(Węzeł2 ww)
+
+        bool HasCycle(Węzeł2 current, HashSet<Węzeł2> visited, Węzeł2 parent)
         {
-            int [] visited
+            visited.Add(current);
+            foreach (var neighbor in current.sąsiad)
+            {
+                if (!visited.Contains(neighbor))
+                {
+                    if (HasCycle(neighbor, visited, current))
+                        return true;
+                }
+                else if (neighbor != parent)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 
@@ -60,6 +87,7 @@ namespace AiSD_ISI_gr1_5
             this.wartość = liczba;
         }
     }
+
     public class Węzeł2
     {
         public int warto;
