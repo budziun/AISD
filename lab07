@@ -35,9 +35,11 @@ namespace AiSD_ISI_gr1_5
             p2.Add(p5);
             p3.Add(p6);
             p4.Add(p6);
-            B(p1);
-            MessageBox.Show(napis);
             napis = "";
+            odwiedzone.Clear();
+            //B(p1);
+            //MessageBox.Show(napis);
+
         }
         void A(Węzeł w)
         {
@@ -47,6 +49,7 @@ namespace AiSD_ISI_gr1_5
                 A(w.dzieci[i]);
             }
         }
+        //DFS GRAF z cyklami
         string napis = "";
         List<Węzeł2> odwiedzone = new();
         void B(Węzeł2 w)
@@ -60,6 +63,14 @@ namespace AiSD_ISI_gr1_5
                     B(sąsiad);
                 }
             }
+        }
+        //BFS dla kazdego GRAFu: 5,2,1,4,8,3
+        string napisC = "";
+        List<Węzeł3> odwiedzoneC = new();
+        void C(Węzeł3 w)
+        {
+            odwiedzone.Add(w);
+            napisC += w.wartość.ToString;
         }
     }
         public class Węzeł
@@ -97,4 +108,11 @@ namespace AiSD_ISI_gr1_5
                 }
             }
         }
+    public class Węzeł3
+    {
+        public int wartość;
+        public List<Węzeł3> prawe = new();
+        public List<Węzeł3> lewe = new();
+        public List<Węzeł3> rodzic = new();
     }
+}
