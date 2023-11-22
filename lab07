@@ -110,9 +110,20 @@ namespace AiSD_ISI_gr1_5
         }
     public class Węzeł3
     {
-        public int wartość;
-        public List<Węzeł3> prawe = new List<Węzeł3>();
-        public List<Węzeł3> lewe = new List<Węzeł3>();
-        public List<Węzeł3> rodzic3 = new List<Węzeł3>();
+        class DrzewoBinarne
+        {
+            public Węzeł3 korzeń;
+            public int liczbaWęzłów = 0;
+
+            public DrzewoBinarne(int liczba)
+            {
+                this.korzeń = new Węzeł3(liczba);
+                this.liczbaWęzłów = 1;
+            }
+        }
+        public void Add(int liczba)
+        {
+
+        }
     }
 }
