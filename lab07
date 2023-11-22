@@ -37,6 +37,7 @@ namespace AiSD_ISI_gr1_5
             p4.Add(p6);
             B(p1);
             MessageBox.Show(napis);
+            napis = "";
         }
         void A(Węzeł w)
         {
