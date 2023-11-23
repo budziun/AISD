@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "AiSD-ISI-gr1-7/1.0.0": {
+        "runtime": {
+          "AiSD-ISI-gr1-7.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AiSD-ISI-gr1-7/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
