@@ -30,7 +30,6 @@ namespace AiSD_ISI_gr1_7
             w1.dzieci.Add(w4);
             w2.dzieci.Add(w5);
             w2.dzieci.Add(w6);
-            //A(w1);
 
             var p1 = new Węzeł2(1);
             var p2 = new Węzeł2(2);
@@ -50,11 +49,26 @@ namespace AiSD_ISI_gr1_7
             //B(p1);
             //MessageBox.Show(napis);
 
-            var s1 = new Wezel3(5);
-            var s2 = new Wezel3(2);
-            
-                
+            var c1 = new Wezel3(5);
+            var c2 = new Wezel3(2);
+            var c3 = new Wezel3(1);
+            var c4 = new Wezel3(4);
+            var c5 = new Wezel3(8);
+            var c6 = new Wezel3(3);
+
+            c1.Addlewe(c2);
+            c1.Addprawe(c3);
+            c2.Addlewe(c4);
+            c2.Addprawe(c5);
+            c3.Addlewe(c6);
+            c4.Addprawe(c6);
+
+            C(c1);
+
+            // Display the result
+            MessageBox.Show(napis);
         }
+
         void A(Węzeł w)
         {
             MessageBox.Show(w.wartość.ToString());
@@ -63,9 +77,11 @@ namespace AiSD_ISI_gr1_7
                 A(w.dzieci[i]);
             }
         }
-        //DFS GRAF z cyklami
+
+        // DFS GRAF z cyklami
         string napis = "";
         List<Węzeł2> odwiedzone = new();
+
         void B(Węzeł2 w)
         {
             odwiedzone.Add(w);
@@ -78,11 +94,33 @@ namespace AiSD_ISI_gr1_7
                 }
             }
         }
-        //BFS dla kazdego GRAFu: 5,2,1,4,8,3
 
+        // BFS dla kazdego GRAFu: 5,2,1,4,8,3
+        void C(Wezel3 start)
+        {
+            Queue<Wezel3> queue = new Queue<Wezel3>();
+            HashSet<Wezel3> visited = new HashSet<Wezel3>();
 
-        
+            queue.Enqueue(start);
+            visited.Add(start);
+
+            while (queue.Count > 0)
+            {
+                Wezel3 current = queue.Dequeue();
+                napis += current.ToString() + Environment.NewLine; // Dodaj wynik do napisu
+
+                foreach (Wezel3 child in current.lewedziecko.Concat(current.prawedziecko))
+                {
+                    if (!visited.Contains(child))
+                    {
+                        queue.Enqueue(child);
+                        visited.Add(child);
+                    }
+                }
+            }
+        }
     }
+}
     public class Węzeł
     {
         public int wartość;
@@ -166,4 +204,4 @@ namespace AiSD_ISI_gr1_7
             return this.wartosc.ToString();
         }
     }
-}
+
