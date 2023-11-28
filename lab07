@@ -1,4 +1,14 @@
-namespace AiSD_ISI_gr1_5
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AiSD_ISI_gr1_7
 {
     public partial class Form1 : Form
     {
@@ -20,7 +30,6 @@ namespace AiSD_ISI_gr1_5
             w1.dzieci.Add(w4);
             w2.dzieci.Add(w5);
             w2.dzieci.Add(w6);
-            //A(w1);
 
             var p1 = new Węzeł2(1);
             var p2 = new Węzeł2(2);
@@ -40,7 +49,26 @@ namespace AiSD_ISI_gr1_5
             //B(p1);
             //MessageBox.Show(napis);
 
+            var c1 = new Wezel3(5);
+            var c2 = new Wezel3(2);
+            var c3 = new Wezel3(1);
+            var c4 = new Wezel3(4);
+            var c5 = new Wezel3(8);
+            var c6 = new Wezel3(3);
+
+            c1.Addlewe(c2);
+            c1.Addprawe(c3);
+            c2.Addlewe(c4);
+            c2.Addprawe(c5);
+            c3.Addlewe(c6);
+            c4.Addprawe(c6);
+
+            C(c1);
+
+            // Display the result
+            MessageBox.Show(napis);
         }
+
         void A(Węzeł w)
         {
             MessageBox.Show(w.wartość.ToString());
@@ -49,9 +77,11 @@ namespace AiSD_ISI_gr1_5
                 A(w.dzieci[i]);
             }
         }
-        //DFS GRAF z cyklami
+
+        // DFS GRAF z cyklami
         string napis = "";
         List<Węzeł2> odwiedzone = new();
+
         void B(Węzeł2 w)
         {
             odwiedzone.Add(w);
@@ -64,66 +94,114 @@ namespace AiSD_ISI_gr1_5
                 }
             }
         }
-        //BFS dla kazdego GRAFu: 5,2,1,4,8,3
-        string napisC = "";
-        List<Węzeł3> odwiedzoneC = new();
-        void C(Węzeł3 w)
-        {
-            
-            
-        }
-    }
-        public class Węzeł
-        {
-            public int wartość;
-            public List<Węzeł> dzieci = new List<Węzeł>();
-            public Węzeł(int liczba)
-            {
-                this.wartość = liczba;
-            }
-        }
-        public class Węzeł2
-        {
-            public int wartość;
-            public List<Węzeł2> sąsiad = new List<Węzeł2>();
-            
-            public Węzeł2(int liczba)
-            {
-                this.wartość = liczba;
-            }
-            public void Add(Węzeł2 s)
-            {
-                if (s == this)
-                {
-                    return;
-                }
-                if (!this.sąsiad.Contains(s))
-                {
-                    this.sąsiad.Add(s);
-                    s.sąsiad.Add(this);
-                }
-                if (!s.sąsiad.Contains(this))
-                {
-                    s.sąsiad.Add(this);
-                }
-            }
-        }
-    public class Węzeł3
-    {
-        class DrzewoBinarne
-        {
-            public Węzeł3 korzeń;
-            public int liczbaWęzłów = 0;
 
-            public DrzewoBinarne(int liczba)
-            {
-                this.korzeń = new Węzeł3(liczba);
-                this.liczbaWęzłów = 1;
-            }
-        }
-        public void Add(int liczba)
+        // BFS dla kazdego GRAFu: 5,2,1,4,8,3
+        void C(Wezel3 start)
         {
+            Queue<Wezel3> queue = new Queue<Wezel3>();
+            HashSet<Wezel3> visited = new HashSet<Wezel3>();
 
+            queue.Enqueue(start);
+            visited.Add(start);
+
+            while (queue.Count > 0)
+            {
+                Wezel3 current = queue.Dequeue();
+                napis += current.ToString() + Environment.NewLine; // Dodaj wynik do napisu
+
+                foreach (Wezel3 child in current.lewedziecko.Concat(current.prawedziecko))
+                {
+                    if (!visited.Contains(child))
+                    {
+                        queue.Enqueue(child);
+                        visited.Add(child);
+                    }
+                }
+            }
         }
     }
 }
+    public class Węzeł
+    {
+        public int wartość;
+        public List<Węzeł> dzieci = new List<Węzeł>();
+        public Węzeł(int liczba)
+        {
+            this.wartość = liczba;
+        }
+    }
+    public class Węzeł2
+    {
+        public int wartość;
+        public List<Węzeł2> sąsiad = new List<Węzeł2>();
+
+        public Węzeł2(int liczba)
+        {
+            this.wartość = liczba;
+        }
+        public void Add(Węzeł2 s)
+        {
+            if (s == this)
+            {
+                return;
+            }
+            if (!this.sąsiad.Contains(s))
+            {
+                this.sąsiad.Add(s);
+                s.sąsiad.Add(this);
+            }
+            if (!s.sąsiad.Contains(this))
+            {
+                s.sąsiad.Add(this);
+            }
+        }
+    }
+    class Wezel3
+    {
+        public int wartosc;
+        public List<Wezel3> rodzic = new List<Wezel3>();
+        public List<Wezel3> lewedziecko = new List<Wezel3>();
+        public List<Wezel3> prawedziecko = new List<Wezel3>();
+        public Wezel3(int wartosc)
+        {
+            this.wartosc = wartosc;
+        }
+
+        public void Addlewe(Wezel3 w)
+        {
+            if (w == this)
+            {
+                return;
+            }
+            if (!this.lewedziecko.Contains(w))
+            {
+                this.lewedziecko.Add(w);
+            }
+            if (!w.rodzic.Contains(this))
+            {
+                w.rodzic.Add(this);
+            }
+
+        }
+        public void Addprawe(Wezel3 w)
+        {
+            if (w == this)
+            {
+                return;
+            }
+            if (!this.prawedziecko.Contains(w))
+            {
+                this.prawedziecko.Add(w);
+            }
+            if (!w.rodzic.Contains(this))
+            {
+                w.rodzic.Add(this);
+            }
+
+        }
+        public override string ToString()
+        {
+            return this.wartosc.ToString();
+        }
+    }
+
