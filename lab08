@@ -48,8 +48,8 @@ namespace AiSD_ISI_gr1_8
             d.Add(9);
             d.Add(6);
 
-    
-            MessageBox.Show(d.ToString());
+
+
         }
 
         void A(Węzeł w)
@@ -103,6 +103,19 @@ namespace AiSD_ISI_gr1_8
             }
         }
         */
+        /////////////////////////
+        //co do domu
+        //1. funkcja znajdz
+        // wezel3 znajdz(int liczba){
+        // ma zwrocic wezel wartosci ktorej szukam
+        // return wezel z wartoscia
+        //}
+        //2. wezel3 znajdz_min (Wezel3 w) -> idziemy w lewo i ten ktory ostatni ten jest najmniejsza wartoscia, czyli dziecko z lewej najmniejsze inaczej zwrot wart
+        //3. wezel3 znajdz_max (Wezel3 w) -> na odwrot co min
+        //4. wezel3 nastepnik  (Wezel3 w) 
+        //a) jest prawe dziecko  -> 3,4,4,5,6,7,8,9 // znajdz min na prawym dziecku
+        //b) nie ma prawego dziecka -> idz do gory tak dlugo az wyjdziesz jako lewe dziecko wtedy rodzic jest nastepnikiem
+        //c) gdy idac do gory wychodze zawsze wychodze jako prawe dziecko az nie ma kolejnego rodzica wtedy brak nastepnika
     }
 }
 public class Węzeł
