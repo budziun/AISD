@@ -39,7 +39,7 @@ namespace AiSD_ISI_gr1_8
             //B(p1);
             //MessageBox.Show(napis);
 
-
+            
 
 
 
@@ -147,6 +147,24 @@ public class Wezel3
         this.wartosc = wartosc;
         this.prawe = null;
         this.lewe = null;
+    }
+
+    public void Add(int liczba)
+    {
+        var dziecko = new Wezel3(liczba);
+        dziecko.rodzic = this;
+        if (liczba < this.wartosc)
+        {
+            this.lewe = dziecko;
+        }
+        else
+        {
+            this.prawe = dziecko;
+        }
+    }
+    public override string ToString()
+    {
+        return this.wartosc.ToString();
     }
 }
 class DrzewoBinarne
