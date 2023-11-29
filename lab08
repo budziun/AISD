@@ -39,12 +39,17 @@ namespace AiSD_ISI_gr1_8
             //B(p1);
             //MessageBox.Show(napis);
 
-            
 
+            var d = new DrzewoBinarne(5);
+            d.Add(4);
+            d.Add(4);
+            d.Add(8);
+            d.Add(7);
+            d.Add(9);
+            d.Add(6);
 
-
-            // Display the result
-            MessageBox.Show(napis);
+    
+            MessageBox.Show(d.ToString());
         }
 
         void A(Węzeł w)
