@@ -77,45 +77,6 @@ namespace AiSD_ISI_gr1_8
                 }
             }
         }
-        /*
-        // BFS dla kazdego GRAFu: 5,2,1,4,8,3
-        void C(Wezel3 start)
-        {
-            Queue<Wezel3> queue = new Queue<Wezel3>();
-            HashSet<Wezel3> visited = new HashSet<Wezel3>();
-
-            queue.Enqueue(start);
-            visited.Add(start);
-
-            while (queue.Count > 0)
-            {
-                Wezel3 current = queue.Dequeue();
-                napis += current.ToString() + Environment.NewLine; // Dodaj wynik do napisu
-
-                foreach (Wezel3 child in current.lewedziecko.Concat(current.prawedziecko))
-                {
-                    if (!visited.Contains(child))
-                    {
-                        queue.Enqueue(child);
-                        visited.Add(child);
-                    }
-                }
-            }
-        }
-        */
-        /////////////////////////
-        //co do domu
-        //1. funkcja znajdz
-        // wezel3 znajdz(int liczba){
-        // ma zwrocic wezel wartosci ktorej szukam
-        // return wezel z wartoscia
-        //}
-        //2. wezel3 znajdz_min (Wezel3 w) -> idziemy w lewo i ten ktory ostatni ten jest najmniejsza wartoscia, czyli dziecko z lewej najmniejsze inaczej zwrot wart
-        //3. wezel3 znajdz_max (Wezel3 w) -> na odwrot co min
-        //4. wezel3 nastepnik  (Wezel3 w) 
-        //a) jest prawe dziecko  -> 3,4,4,5,6,7,8,9 // znajdz min na prawym dziecku
-        //b) nie ma prawego dziecka -> idz do gory tak dlugo az wyjdziesz jako lewe dziecko wtedy rodzic jest nastepnikiem
-        //c) gdy idac do gory wychodze zawsze wychodze jako prawe dziecko az nie ma kolejnego rodzica wtedy brak nastepnika
     }
 }
 public class Węzeł
@@ -184,6 +145,70 @@ public class Wezel3
     {
         return this.wartosc.ToString();
     }
+
+    public Wezel3 Znajdz(int liczba)
+    {
+        var current = this;
+
+        while (current != null)
+        {
+            if (liczba == current.wartosc)
+            {
+                return current;
+            }
+            else if (liczba < current.wartosc)
+            {
+                current = current.lewe;
+            }
+            else
+            {
+                current = current.prawe;
+            }
+        }
+
+        return null; // Element not found
+    }
+
+    // 2. Funkcja znajdz_min
+    public Wezel3 ZnajdzMin(Wezel3 w)
+    {
+        while (w.lewe != null)
+        {
+            w = w.lewe;
+        }
+
+        return w;
+    }
+
+    // 3. Funkcja znajdz_max
+    public Wezel3 ZnajdzMax(Wezel3 w)
+    {
+        while (w.prawe != null)
+        {
+            w = w.prawe;
+        }
+
+        return w;
+    }
+
+    // 4. Funkcja nastepnik
+    public Wezel3 Nastepnik(Wezel3 w)
+    {
+        if (w.prawe != null)
+        {
+            return ZnajdzMin(w.prawe);
+        }
+
+        var parent = w.rodzic;
+        while (parent != null && w == parent.prawe)
+        {
+            w = parent;
+            parent = parent.rodzic;
+        }
+
+        return parent;
+    }
+
 }
 class DrzewoBinarne
 {
@@ -230,7 +255,5 @@ class DrzewoBinarne
                 }
             }
         }
-
-
     }
 }
