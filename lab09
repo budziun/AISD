@@ -49,7 +49,7 @@ namespace AiSD_ISI_gr1_8
             d.Add(6);
 
 
-
+            
         }
 
         void A(Węzeł w)
@@ -146,68 +146,6 @@ public class Wezel3
         return this.wartosc.ToString();
     }
 
-    public Wezel3 Znajdz(int liczba)
-    {
-        var current = this;
-
-        while (current != null)
-        {
-            if (liczba == current.wartosc)
-            {
-                return current;
-            }
-            else if (liczba < current.wartosc)
-            {
-                current = current.lewe;
-            }
-            else
-            {
-                current = current.prawe;
-            }
-        }
-
-        return null; // Element not found
-    }
-
-    // 2. Funkcja znajdz_min
-    public Wezel3 ZnajdzMin(Wezel3 w)
-    {
-        while (w.lewe != null)
-        {
-            w = w.lewe;
-        }
-
-        return w;
-    }
-
-    // 3. Funkcja znajdz_max
-    public Wezel3 ZnajdzMax(Wezel3 w)
-    {
-        while (w.prawe != null)
-        {
-            w = w.prawe;
-        }
-
-        return w;
-    }
-
-    // 4. Funkcja nastepnik
-    public Wezel3 Nastepnik(Wezel3 w)
-    {
-        if (w.prawe != null)
-        {
-            return ZnajdzMin(w.prawe);
-        }
-
-        var parent = w.rodzic;
-        while (parent != null && w == parent.prawe)
-        {
-            w = parent;
-            parent = parent.rodzic;
-        }
-
-        return parent;
-    }
 
 }
 class DrzewoBinarne
@@ -258,6 +196,53 @@ class DrzewoBinarne
                 }
             }
         }
+    }
+    public Wezel3 ZnajdzMin(Wezel3 w)
+    {
+        while (w.lewe != null)
+        {
+            w = w.lewe;
+        }
+
+        return w;
+    }
+    public Wezel3 ZnajdzMax(Wezel3 w)
+    {
+        while (w.prawe != null)
+        {
+            w = w.prawe;
+        }
+
+        return w;
+    }
+    public Wezel3 Nastepnik(Wezel3 w)
+    {
+        if (w.prawe != null)
+        {
+            return this.ZnajdzMin(w.prawe);
+        }
+        while (w.rodzic != null)
+        {
+            if (w.rodzic.lewe == w)
+            {
+                return w.rodzic;
+            }
+            else
+            {
+                w = w.rodzic;
+            }
+        }
+        return null;
+    }
+    // Usun do domu
+    // 1) gdy nie ma dzieci to odwiazujemy -> usuwamy 1 , mowimy do 3 ze nie jest rodzicem 1 a 1 ze nie jest 3 dzieckiem 
+    // 2) gdy jest jedno dziecko to wchodzi na miejsce rodzica 
+    // w.rodzic = w; !!! 
+    // 3) gdy 2 dzieci to rekurencja i wchodzimy w glab az dojde do nastepnika ktory ma jedno albo zero dzieci i wtedy zaczynaj sie cofac
+
+    public Wezel3 Usun(int liczba)
+    {
+
     }
 
     private Wezel3 ZnajdzRodzica(int a)
