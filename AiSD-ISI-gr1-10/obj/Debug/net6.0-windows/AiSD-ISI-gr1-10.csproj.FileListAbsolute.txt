@@ -1,0 +1,17 @@
+D:\169224\AiSD-ISI-gr1-10\bin\Debug\net6.0-windows\AiSD-ISI-gr1-10.exe
+D:\169224\AiSD-ISI-gr1-10\bin\Debug\net6.0-windows\AiSD-ISI-gr1-10.deps.json
+D:\169224\AiSD-ISI-gr1-10\bin\Debug\net6.0-windows\AiSD-ISI-gr1-10.runtimeconfig.json
+D:\169224\AiSD-ISI-gr1-10\bin\Debug\net6.0-windows\AiSD-ISI-gr1-10.dll
+D:\169224\AiSD-ISI-gr1-10\bin\Debug\net6.0-windows\AiSD-ISI-gr1-10.pdb
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.csproj.AssemblyReference.cache
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD_ISI_gr1_10.Form1.resources
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.csproj.GenerateResource.cache
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.GeneratedMSBuildEditorConfig.editorconfig
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.AssemblyInfoInputs.cache
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.AssemblyInfo.cs
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.csproj.CoreCompileInputs.cache
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.dll
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\refint\AiSD-ISI-gr1-10.dll
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.pdb
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\AiSD-ISI-gr1-10.genruntimeconfig.cache
+D:\169224\AiSD-ISI-gr1-10\obj\Debug\net6.0-windows\ref\AiSD-ISI-gr1-10.dll
